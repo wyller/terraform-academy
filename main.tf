@@ -26,15 +26,15 @@ resource "azurerm_public_ip" "my_public_ip" {
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
   allocation_method   = "Static"
-  sku                 = "Standard"
-  zones               = ["1", "2", "3"]
+  sku                 = var.quality_std
+  zones               = var.zones
 }
 # Criar um load balancer (LB)
 resource "azurerm_lb" "my_load_balancer" {
   name                = "myLoadBalancer"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
-  sku                 = "Standard"
+  sku                 = var.quality_std
   frontend_ip_configuration {
     name                 = "myFrontEnd"
     public_ip_address_id = azurerm_public_ip.my_public_ip.id

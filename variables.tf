@@ -13,3 +13,29 @@ variable "username" {
   description = "O usuario que vai ser usado pra acessar a VM."
   default     = "azureadmin"
 }
+variable "subscription_id" {
+  type        = string
+  description = "azure subscription id"
+}
+variable "tenant_id" {
+  type        = string
+  description = "azure tenant id"
+}
+variable "client_id" {
+  type        = string
+  description = "azure client id"
+}
+variable "client_secret" {
+  type        = string
+  description = "azure clinet secret"
+}
+variable "zones" {
+  type        = list(any)
+  description = "Todas as zonas envolvidas naquela regiao."
+  default     = ["1", "2", "3"]
+}
+variable "quality_std" {
+  type        = string
+  description = "Todas as zonas envolvidas naquela regiao."
+  default     = "Standard"
+}

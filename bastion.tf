@@ -4,8 +4,8 @@ resource "azurerm_public_ip" "my_bastion_ip" {
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
   allocation_method   = "Static"
-  sku                 = "Standard"
-  zones               = ["1", "2", "3"]
+  sku                 = var.quality_std
+  zones               = var.zones
 }
 # Criar Bastion SubNet
 resource "azurerm_subnet" "my_bastion_subnet" {
@@ -19,7 +19,7 @@ resource "azurerm_bastion_host" "my_bastion_host" {
   name                = "bastionHost"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
-  sku                 = "Standard"
+  sku                 = var.quality_std
   tunneling_enabled   = "true"
   ip_configuration {
     name                 = "bastionIpConfiguration"

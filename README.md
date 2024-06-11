@@ -8,12 +8,9 @@
 ## Configure o Terraform with Azure Cloud Shell
 - [Terraform in Azure Cloud Shell ](https://learn.microsoft.com/pt-pt/azure/developer/terraform/get-started-cloud-shell-bash?tabs=bash)
 
-
 UML
 
-<img src="./images/UML.PNG" 
-width="500px"/>
-
+<img src="./images/UML.PNG" width="500px"/>
 
 ## Build
 
